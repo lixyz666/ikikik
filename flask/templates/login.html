@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background:url("https://lixuanzer.top/pic.jpg");
+        }
+        h1 {
+            margin-bottom: 10px;
+            color: blue;
+            text-align: center;
+        }
+        li, p {
+            text-align: center;
+            color: coral;
+        }
+        input[type="password"], input[type="text"] {
+    width: 20%;
+    background:url()
+}
+    </style>
+    <title>登录后台</title>
+</head>
+<body>
+<h1>登录</h1>
+<form id="loginForm" method="post" action="/admin">
+<ul>
+    <li>
+        <p>账号</p>
+        <label>
+            <input type="text" name="zh" id="zh">
+        </label>
+    </li>
+     <li>
+        <p>密码</p>
+        <label>
+            <input type="password" name="mm" id="mm">
+        </label>
+    </li>
+    </li>
+     <li>
+         <p>邀请码</p>
+        <label>
+            <input type="text" name="yqm" id="yqm">
+        </label>
+    </li>
+</ul>
+    <p align="right"><input type="submit" value="登录后台"></p>
+</form>
+<script type="text/javascript">
+    const loginForm = document.getElementById("loginForm");
+    const mm = document.getElementById("mm");
+    const zh = document.getElementById("zh");
+    const yqm = document.getElementById("yqm");
+
+    loginForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // 阻止表单提交
+
+// 验证邀请码
+        if (yqm.value !== "rnu123") {
+            alert("邀请码无效");
+            return;
+        }
+
+        // 验证密码
+        if (mm.value !== "lixuanze")
+        if (mm.value !== "ylinck") {
+            alert("密码无效");
+            return;
+        }
+
+        // 验证账号
+        if (zh.value !== "lixuanze")
+        if (zh.value !== "ylinck"){
+            alert("账号无效");
+            return;
+        }
+
+        // 验证通过
+        alert("登录成功");
+        loginForm.submit(); // 手动提交表单
+    });
+</script>
+</body>
+</html>

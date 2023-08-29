@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ikikikik</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <div class="box11">
+<div class="text-l">
+<a href="https://v.lixuanzer.top">首页</a>
+<a href="https://v.lixuanzer.top/wiki">Wiki</a>
+<a href="https://vi.lixuanzer.top/register">登录/注册</a>
+<a href="https://v.lixuanzer.top/dm">动漫</a>
+<a href="https://vi.lixuanzer.top/zb">直播</a>
+</div>    
+    </div>
+
+
+    <a href="/">
+        <div class="inz">
+        <div class="box">
+            <p>欢迎来到！ikikikik!i站</p>
+    </a>
+    <br>
+    <div id="app">
+        <p>{{ randomText }}</p>
+    </div>
+    </div>
+</div>
+<div id="app1">
+    <p>{{ currentTime }}</p>
+</div>
+<br>
+    <script>
+        new Vue({
+    el: '#app',
+    data: {
+        texts: [
+            "我不是我，我就是我，你不是你，你就是你，啊哈哈哈哈",
+            "好好好，这么玩是吧",
+            "你先开的",
+            "闪光dance",
+            "WDNMD",
+            "服了你这个老六了",
+            "只要有时间，我会忆起她的面容",
+            "梦想不能随机,随机老子就要应变",
+            "随意随性随缘， 随你随他随便， 随风随雨随流， 随时随地随天。",
+            "哎呀，这个表情，是被我说中了吗？",
+            "如果你从未在世上出现，我可能已经成了一个和尚"
+        ],
+        randomText: ''
+    },
+    methods: {
+        generateRandomText() {
+            var randomIndex = Math.floor(Math.random() * this.texts.length);
+            this.randomText = this.texts[randomIndex];
+        }
+    },
+    created() {
+        this.generateRandomText();
+    }
+});
+            new Vue({
+el: '#app1',
+data: {
+    currentTime: ''
+},
+created() {
+    this.getCurrentTime();
+},
+methods: {
+    getCurrentTime() {
+        setInterval(() => {
+            this.currentTime = new Date().toLocaleString();
+        }, 1000);
+    }
+}
+});
+    </script>
+    <br>
+    <br>
+<div class="boxtwo">
+<p class="pset">视频</p>
+</div>
+</body>
+</html>

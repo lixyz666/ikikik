@@ -1,0 +1,30 @@
+p {
+    font-size: 32px;
+    text-align: center;
+    color: rgb(120, 24, 139);
+    font-style: italic;
+}
+body {
+    background: url(https://lixuanzer.top/pic.jpg);
+}
+.box {
+        width: 400px;
+        height: 100px;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border-radius: 5px;
+}
+.inz{
+    position: relative;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.boxtwo {
+    width: 1890px;
+    height: 1000px;
+    background-color: rgb(247, 247, 247, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+}

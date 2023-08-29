@@ -1,0 +1,16 @@
+.text-l {
+    text-align: left;
+    color: aqua;
+    font-size: 65px;
+}
+.box11 {
+    width: 1890px;
+    height: 80px;
+    background-color: rgb(247, 247, 247, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+}
+.pset {
+    font-size: 20px;
+    color: aquamarine;
+}

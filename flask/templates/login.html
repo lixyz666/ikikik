@@ -50,39 +50,5 @@
 </ul>
     <p align="right"><input type="submit" value="登录后台"></p>
 </form>
-<script type="text/javascript">
-    const loginForm = document.getElementById("loginForm");
-    const mm = document.getElementById("mm");
-    const zh = document.getElementById("zh");
-    const yqm = document.getElementById("yqm");
-
-    loginForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // 阻止表单提交
-
-// 验证邀请码
-        if (yqm.value !== "rnu123") {
-            alert("邀请码无效");
-            return;
-        }
-
-        // 验证密码
-        if (mm.value !== "lixuanze")
-        if (mm.value !== "ylinck") {
-            alert("密码无效");
-            return;
-        }
-
-        // 验证账号
-        if (zh.value !== "lixuanze")
-        if (zh.value !== "ylinck"){
-            alert("账号无效");
-            return;
-        }
-
-        // 验证通过
-        alert("登录成功");
-        loginForm.submit(); // 手动提交表单
-    });
-</script>
 </body>
 </html>

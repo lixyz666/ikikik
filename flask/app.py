@@ -3,6 +3,7 @@ import pymysql
 
 app = Flask(__name__)
 
+
 username = "lixuanze"
 password = "lixuanze"
 
@@ -56,7 +57,6 @@ def register():
 @app.route("login")
 def loginuser():
     return render_template("loginuser.html")
-
 
 if __name__ == '__main__':
     app.run(port=7091)

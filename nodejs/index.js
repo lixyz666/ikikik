@@ -1,41 +1,28 @@
-const http = require('http');
-const fs = require('fs');
-const url = require('url');
+const express = require('express');
 
-const server = http.createServer((req, res) => {
-    const requestUrl = url.parse(req.url, true);
-    const pathName = requestUrl.pathname;
+const app = express();
+const port = 7090;
 
-    // 处理根路径请求
-    if (pathName === '/') {
-        fs.readFile('./ass/index.html', (err, data) => {
-            if (err) {
-                res.writeHead(500, { 'Content-Type': 'text/plain;charset=utf-8' });
-                res.end(Buffer.from('服务器错误，请联系管理员'));
-            } else {
-                res.writeHead(200, { 'Content-Type': 'text/html;charset=utf-8' });
-                res.end(data);
-            }
-        });
-    }
-    // 处理/wiki路径请求
-    else if (pathName === '/wiki') {
-        fs.readFile('./ass/wiki.html', (err, data) => {
-            if (err) {
-                res.writeHead(500, { 'Content-Type': 'text/plain;charset=utf-8' });
-                res.end(Buffer.from('服务器错误，请联系管理员'));
-            } else {
-                res.writeHead(200, { 'Content-Type': 'text/html;charset=utf-8' });
-                res.end(data);
-            }
-        });
-    }
-    else {
-        res.writeHead(404, { 'Content-Type': 'text/plain;charset=utf-8' });
-        res.end(Buffer.from('404报错了，别想着登后台'));
-    }
+// 设置路由
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/ass/index.html');
 });
 
-server.listen(7090, () => {
-    console.log('服务器已启动！监听端口7090');
+app.get('/wiki', (req, res) => {
+  res.sendFile(__dirname + '/ass/wiki.html');
+});
+
+app.get('/main.css', (req, res) => {
+  res.sendFile(__dirname + '/ass/main.css');
+});
+
+app.get('/style.css', (req, res) => {
+  res.sendFile(__dirname + '/ass/style.css');
+});
+
+
+
+// 启动 Express 服务器
+app.listen(port, () => {
+  console.log(`服务器成功启动。在${port}`);
 });
